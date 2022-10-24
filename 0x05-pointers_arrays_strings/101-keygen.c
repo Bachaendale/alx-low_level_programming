@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	char a[100];
+char a[100];
 	int r, n, 1;
 
 	n = 0;
