@@ -25,4 +25,4 @@ int i, j, n, x;
 		j++;
 	}
 	return (n);
-
+}
