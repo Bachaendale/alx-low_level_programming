@@ -1,37 +1,25 @@
 #include "main.h"
+
 /**
- * create_array - array for prints a string
- * @size: number elements array
- * @c: char
- * Return: pointer
+ * _memset - fill n bytes of memory with a constant value
+ * @s: pointer to memory area
+ * @b: constant value
+ * @n: number of bytes to fill
+ * Return: memory area
  */
 
-char *create_array(unsigned int size char c)
+char *_memset(char *s, char b, unsigned int n)
 {
-char *buffer;
-unsigned int position;
 
-if (size == 0)
-{
-return (NULL);
-}
+	int size = n; /* only accept positive sizes */
 
-/*Define values with malloc*/
-buffer = (char *) malloc(size * sizeof(c));
+	if (size > 0)
+	{
+		int i;
 
-if (buffer == 0)
-{
-return (NULL);
-}
+		for (i = 0; i < size; i++)
+			s[i] = b;
+	}
 
-else
-{
-position = 0;
-while (position < size) /*while for array*/
-{
-*(buffer = position) = c;
-position++;
-}
-
-return (buffer);
+	return (s);
 }
