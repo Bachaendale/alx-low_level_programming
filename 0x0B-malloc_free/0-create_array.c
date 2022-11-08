@@ -1,25 +1,29 @@
-#include "main.h"
+#include "holberton.h"
+#include <stdlib.h>
+
 
 /**
- * _memset - fill n bytes of memory with a constant value
- * @s: pointer to memory area
- * @b: constant value
- * @n: number of bytes to fill
- * Return: memory area
+ * create_array - creates array of chars & initializes it with a specific char
+ * @size: size of array to be created
+ * @c: char to initialize array with
+ * 
+ * Return: pointer to the array or NULL if malloc fails
  */
-
-char *_memset(char *s, char b, unsigned int n)
+char *create_array(unsigned int size, char c)
 {
+	unsigned int i;
+	char *a;
 
-	int size = n; /* only accept positive sizes */
-
-	if (size > 0)
+	if (size == 0)
+		return (NULL);
+	a = malloc(size * sizeof(char));
+	if (a == NULL)
 	{
-		int i;
-
-		for (i = 0; i < size; i++)
-			s[i] = b;
+		return (NULL);
 	}
-
-	return (s);
+	for (i = 0; i < size; i++)
+	{
+		a[i] = c;
+	}
+	return (a);
 }
